@@ -32,7 +32,7 @@ services:
     ports:
       # (컨테이너 내부) 순수 백앤드 포트 3050을
       # (로컬) 5000로 변환
-      - "5000:3050"
+      - "5000:5000"
   redis:
     container_name: redis
     image: redis
@@ -60,7 +60,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
-      - "3000:80"
+      - "8000:80"
     networks:
       - full
 

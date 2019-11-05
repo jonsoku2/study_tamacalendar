@@ -1,27 +1,14 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRouter from './Router';
+// global
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: {}
-    };
-  }
+const App = () => {
+  return (
+    <Router>
+      <AppRouter></AppRouter>
+    </Router>
+  );
+};
 
-  testAPI = async () => {
-    const res = await axios.get("/api/");
-    this.setState({
-      test: res.data
-    });
-  };
-
-  componentDidMount() {
-    this.testAPI();
-  }
-
-  render() {
-    const { test } = this.state;
-    return <div>{test.test}</div>;
-  }
-}
+export default App;
